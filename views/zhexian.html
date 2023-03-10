@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            overflow: hidden;
+        }
+        .box {
+            position: absolute;
+            top: 0%;;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* 内容 */
+
+        .text {
+            width: 100%;
+            height: 40px;
+            font-weight: 600;
+        }
+        #box1{
+            width: 100%;
+            height: 100%;
+            color: #1726;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="box1">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../utils/echarts.js"></script>
+<script>
+    let arr = [];
+    for (let i = 1; i <= 12; i++) {
+        arr.push(i + "月")
+    }
+    var myChar = echarts.init(document.getElementById('box1'));
+
+    var option = {
+        title: {
+            text: '每月商户变化情况',
+            subtext: '商户名/件数',
+            textStyle: {
+                fontSize: '18',
+                color: '#000000',
+            },
+            ssubtextStyle: {
+                fontSize:"15",
+                color:"#000000",
+                fontWeight:"800"
+            }
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            textStyle: {
+                // 图例文字颜色
+                color: '#4c9bfd'
+            },
+            // 调整位置
+            right: '15%',
+            top:"10%"
+        },
+        // 鼠标放上显示信息
+        length: {
+            data: ["小米", "华为","联想","三星"]
+        },
+
+        grid: {
+            top: '20%',
+            left: '5%',
+            right: '10%',
+            bottom: '20%',
+            show: true,
+            containLabel: true,
+            borderColor: '#102E4A',
+        },
+
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: arr,
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                color: 'black'
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#667282',
+
+                }
+            },
+
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                color: 'black'
+            },
+            splitLine: {
+                lineStyle: {
+                    color: 'black'
+                }
+            }
+
+        },
+        series: [{
+            data: [30, 60, 90, 40, 70, 50, 85, 45, 180, 45, 55, 60],
+            type: 'line',
+            smooth: true,
+            name: '小米',
+            color: '#5687D5',
+        }, {
+            data: [35, 80, 25, 180, 50, 40, 89, 55, 40, 35, 55, 60],
+            type: 'line',
+            smooth: true,
+            name: '华为',
+            color: '#C9564C',
+        },{
+            data: [60, 30, 50, 67, 95, 29, 23, 54, 126, 63, 67, 92],
+            type: 'line',
+            smooth: true,
+            name: '联想',
+            color: '#563422',
+        }, {
+            data: [73, 52, 62, 73, 14, 15, 89, 93, 84, 82, 93, 15],
+            type: 'line',
+            smooth: true,
+            name: '三星',
+            color: '#1726',
+        }]
+    };
+    myChar.setOption(option)
+</script>
+<script>
+    var time_ = document.getElementsByClassName('time');
+    for (var i = 0; i < time_.length; i++) {
+        time_[i].setAttribute('index', i)
+        time_[i].onclick = function () {
+            var index = this.getAttribute('index')
+            for (var j = 0; j < time_.length; j++) {
+                time_[j].id = ''
+                time_[index].id = 'year'
+            }
+        }
+    }
+    var num = 0;
+</script>

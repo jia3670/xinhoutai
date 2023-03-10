@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="../font_3942221_1kzu1ezyiea/iconfont.css">
+    <script src="../utils/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            height: 6%;
+            background: url(../imgs/beijing2.png);
+            background-size: 100% 100%;
+        }
+
+        main {
+            height: 88%;
+        }
+
+        #buttom {
+            background-color: white;
+            position: fixed;
+            box-shadow: 1px -1px 3px 4px rgb(224, 227, 234);
+            height: 6%;
+            width: 100%;
+            display: flex;
+            bottom: 0px;
+        }
+
+        #buttom>span {
+            width: 25%;
+            text-align: center;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #buttom>span>img {
+            text-align: center;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        .active {
+            color: rgb(67, 128, 245);
+        }
+
+        #dd1>p {
+            height: 3rem;
+            width: 100%;
+            padding: 0.3rem 1.2rem;
+            box-sizing: border-box;
+        }
+
+        #dd1>p:nth-of-type(1) {
+            text-align: center;
+            color: rgb(7, 128, 224);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        #dd1>p>input {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd1>p:nth-of-type(4)>input {
+            width: 45%;
+            margin-right: 0.7rem;
+        }
+
+        #dd1>p>span>img {
+            vertical-align: middle;
+            width: 41%;
+            height: 100%;
+        }
+
+        p>button {
+            width: 100%;
+            height: 3rem;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 0.3rem;
+            color: white;
+            font-size: 1.2rem;
+            background-color: rgb(7, 128, 224);
+        }
+
+        .shua {
+            vertical-align: middle;
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            line-height: 100%;
+            text-align: center;
+            background-color: rgb(211, 211, 211);
+            align-items: center;
+        }
+
+        .icon-shuaxin {
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+
+        .icon-shuaxin:before {
+            line-height: 150%;
+        }
+
+        #dd2 {
+            padding-top: 2rem;
+            box-sizing: border-box;
+        }
+
+        #dd2>p {
+            height: 3rem;
+            width: 100%;
+            padding: 0.3rem 1.2rem;
+            box-sizing: border-box;
+        }
+
+        #dd2>p:first-child {
+            height: 2rem;
+        }
+
+        #dd2>p:nth-of-type(2) {
+            height: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            color: rgb(140, 140, 140);
+            margin-bottom: 2rem;
+        }
+
+        #dd2>p:nth-of-type(1) {
+            text-align: center;
+            color: rgb(7, 128, 224);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        #dd2>p>input {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd2>p:nth-of-type(6)>input {
+            width: 45%;
+            margin-right: 0.7rem;
+        }
+
+        #dd2>p>span>img {
+            vertical-align: middle;
+            width: 41%;
+            height: 100%;
+        }
+
+        p>button {
+            width: 100%;
+            height: 3rem;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 0.3rem;
+            color: white;
+            font-size: 1.2rem;
+            background-color: rgb(7, 128, 224);
+        }
+
+        .icon-shuaxin {
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+
+        .icon-shuaxin:before {
+            line-height: 150%;
+        }
+
+        #dd2>p:nth-of-type(7) {
+            margin-top: 1rem;
+        }
+
+        #dd3 {
+            padding-top: 2rem;
+            box-sizing: border-box;
+        }
+
+        #dd3>p {
+            height: 3rem;
+            width: 100%;
+            padding: 0.3rem 1.2rem;
+            box-sizing: border-box;
+        }
+
+        #dd3>p:first-child {
+            height: 2rem;
+        }
+
+        #dd3>p:nth-of-type(2) {
+            height: 2rem;
+            text-align: center;
+            font-size: 1rem;
+            color: rgb(140, 140, 140);
+            margin-bottom: 1rem;
+        }
+
+        #dd3>p:nth-of-type(1) {
+            text-align: center;
+            color: rgb(7, 128, 224);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        #dd3>p>input {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd3>p>select {
+            color: rgb(117, 117, 117);
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd3>p:nth-of-type(9)>input {
+            width: 45%;
+            margin-right: 0.7rem;
+        }
+
+        #dd3>p>span>img {
+            vertical-align: middle;
+            width: 41%;
+            height: 100%;
+        }
+
+        p>button {
+            width: 100%;
+            height: 3rem;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 0.3rem;
+            color: white;
+            font-size: 1.2rem;
+            background-color: rgb(7, 128, 224);
+        }
+
+        .icon-shuaxin {
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
+
+        .icon-shuaxin:before {
+            line-height: 150%;
+        }
+
+        #dd3>p:nth-of-type(10) {
+            margin-top: 1rem;
+        }
+
+        #main3 {
+            display: none;
+        }
+
+        #main2 {
+            display: none;
+        }
+
+        #main1 {
+            display: none;
+        }
+
+        #shu1 {
+            height: 84%;
+            text-align: center;
+            background-color: rgb(240, 240, 240);
+            border-radius: 0.5rem;
+            border: 1px solid rgb(240, 240, 240);
+        }
+
+        #shu1>p {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        #shu1>img {
+            margin-top: 1rem;
+            width: 70%;
+            height: 73%;
+        }
+
+        #main4 {
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        #shu2 {
+            height: 130%;
+            padding: 1rem;
+        }
+
+        #shu2>p {
+            height: 1rem;
+            width: 100%;
+            position: relative;
+            padding-bottom: 1rem;
+            /* box-sizing: border-box; */
+            padding-top: 1rem;
+            line-height: 1rem;
+            border-bottom: 1px solid rgb(238, 238, 238);
+        }
+
+        #shu2>p>span:nth-of-type(1) {
+            color: rgb(168, 168, 168);
+        }
+
+        #shu2>p>span:nth-of-type(2) {
+            position: absolute;
+            right: 0px;
+        }
+
+        #shu2>p:nth-of-type(8) {
+            height: 3rem;
+            display: flex;
+        }
+
+        #shu2>p:nth-of-type(8)>span {
+            width: 50%;
+            height: 100%;
+        }
+
+        #shu2>p:nth-of-type(8)>span:nth-of-type(1) {
+            display: flex;
+            flex-direction: column;
+            line-height: 170%;
+        }
+
+        #shu2>p:nth-of-type(8)>span:nth-of-type(2) {
+            text-align: right;
+            flex-direction: column;
+        }
+
+        #shu2>p:nth-of-type(10) {
+            border: none;
+            height: 14rem;
+            line-height: 170%;
+        }
+
+        .red {
+            color: red;
+        }
+
+        #shu3 {
+            height: 65%;
+            padding: 1rem;
+        }
+
+        #shu2j {
+            height: 2%;
+            background-color: rgb(235, 239, 248);
+            width: 100%;
+        }
+
+        #shu31 {
+            height: 40%;
+            display: flex;
+        }
+
+        #shu32 {
+            width: 10%;
+            height: 235%;
+        }
+
+        #shu32>img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #shu33 {
+            margin-top: 0.5rem;
+            width: 90%;
+        }
+
+        #shu33>div {
+            width: 100%;
+            border-radius: 0.5rem;
+            background-color: rgb(244, 244, 244);
+            display: flex;
+        }
+
+        .shu331 {
+            height: 6rem;
+            margin-top: 1rem;
+        }
+
+        .shu331>div:nth-of-type(1) {
+            width: 20%;
+            position: relative;
+        }
+
+        .shu331>div:nth-of-type(1)>img {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translateX(-50%);
+            transform: translateY(-50%);
+        }
+
+        .shu331>div:nth-of-type(2) {
+            width: 50%;
+            align-items: center;
+            line-height: 100%;
+            padding: 0.2rem;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .shu331>div:nth-of-type(2)>p {
+            font-size: 0.9rem;
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .shu331>div:nth-of-type(2)>p>span {
+            font-size: 0.3rem;
+            color: rgb(173, 173, 173);
+        }
+
+        .shu331>div:nth-of-type(3)>button {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            padding: 0.2rem;
+            border: none;
+            border-radius: 0.3rem;
+            background-color: rgb(0, 207, 186);
+        }
+
+        .color2 {
+            background-color: rgb(255, 82, 83) !important;
+        }
+
+        .color3 {
+            background-color: rgb(50, 140, 245) !important;
+        }
+
+        #shu4 {
+            height: 6%;
+            background-color: rgb(234, 239, 248);
+            text-align: center;
+            padding: 0.5rem;
+            line-height: 200%;
+        }
+
+        #dd4 {
+            padding-top: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd4>p {
+            height: 3rem;
+            width: 100%;
+            padding: 0.3rem 1.2rem;
+            box-sizing: border-box;
+        }
+
+        #dd4>p:first-child {
+            height: 2rem;
+        }
+
+        #dd4>p:nth-of-type(1) {
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        input{
+            outline-style: none;
+        }
+
+        #dd4>p>input {
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #dd4>p>select {
+            color: rgb(117, 117, 117);
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0.3rem;
+            background-color: rgb(244, 244, 244);
+            border: none;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
+
+        #shu5 {
+            height: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <footer></footer>
+    <!-- 找回物权码 -->
+    <main id="main1">
+        <div id="dd1">
+            <p>找回物权码</p>
+            <p><input type="text" placeholder="物权人姓名："></p>
+            <p><input type="text" placeholder="物权人电话："></p>
+            <p><input type="text" placeholder="验证码"><span><img src="../imgs/yanzhengma.jpg" alt=""></span><span
+                    class="iconfont icon-shuaxin shua"></span>
+            </p>
+            <p><button>确认</button></p>
+        </div>
+    </main>
+    <!-- 找回物权码 -->
+    <main id="main2">
+        <div id="dd2">
+            <p>找回物权码</p>
+            <p>修改后请牢记并妥善保管新物权码</p>
+            <p><input type="text" placeholder="原物权码"></p>
+            <p><input type="text" placeholder="新物权码"></p>
+            <p><input type="text" placeholder="确认物权码"></p>
+            <p><input type="text" placeholder="验证码"><span><img src="../imgs/yanzhengma.jpg" alt=""></span><span
+                    class="iconfont icon-shuaxin shua"></span>
+            </p>
+            <p><button>确认</button></p>
+        </div>
+    </main>
+    <!-- 转移物权码 -->
+    <main id="main3">
+        <div id="dd3">
+            <p>转移物权码</p>
+            <p>转移后请告知新物权人</p>
+            <p><input type="text" placeholder="物权验证码"></p>
+            <p><input type="text" placeholder="姓名"></p>
+            <p><input type="text" placeholder="电话"></p>
+            <p><select name="" id="">
+                    <option value="">选择省</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">广州</option>
+                    <option value="">深圳</option>
+                </select></p>
+            <p><select name="" id="">
+                    <option value="">选择市</option>
+                    <option value="">北京</option>
+                    <option value="">上海</option>
+                    <option value="">广州</option>
+                    <option value="">深圳</option>
+                </select></p>
+            <p><input type="text" placeholder="电话"></p>
+            <p><input type="text" placeholder="验证码"><span><img src="../imgs/yanzhengma.jpg" alt=""></span><span
+                    class="iconfont icon-shuaxin shua"></span>
+            </p>
+            <p><button>确认</button></p>
+        </div>
+    </main>
+    <!-- 主页 -->
+    <main id="main4">
+        <div id="shu1">
+            <p>傲慢与偏见 世界著名典藏</p>
+            <img src="../imgs/aomanyipianjian.png" alt="">
+        </div>
+        <div id="shu2">
+            <p><span>图书名称</span><span>傲慢与偏见 世界著名典藏</span></p>
+            <p><span>ISBN</span><span>9787511726155</span></p>
+            <p><span>作者</span><span>(英)奥斯丁 著，罗良功 译</span></p>
+            <p><span>出版社</span><span>中央编译出版社</span></p>
+            <p><span>出版时间</span><span>2015年04月</span></p>
+            <p><span>价格</span><span>￥17.00</span></p>
+            <p><span>图书分类</span><span>金融管理</span></p>
+            <p><span><span>产品认证</span><span>(经国密算法认证)</span>
+                </span><span>2015092000117<br>0186304685920<br>6935173700263</span></p>
+            <p><span>商品状态</span><span class="red">已售</span></p>
+            <p><span>图书详情</span><br>
+                <span>内容简介<br>
+                    这是英国著名女作家简·奥斯丁的代表作，是一部描写爱情
+                    与婚姻的小说。这部小说以男女主人公达西和伊丽莎白由于
+                    傲慢和偏见而产生的爱情纠葛为线索，共写了四起姻缘,小
+                    说情节曲折，富有戏剧性，语言清新流畅，充满机智，是奥
+                    斯丁*受欢迎的一部小说。</span>
+            </p>
+        </div>
+        <div id="shu2j"></div>
+        <div id="shu3">
+            <p>追溯信息</p>
+            <div id="shu31">
+                <div id="shu32"><img src="../imgs/加载.png" alt=""></div>
+                <div id="shu33">
+                    <div class="shu331">
+                        <div><img src="../imgs/男头像.png" alt=""></div>
+                        <div>
+                            <p>86 188***4356 <br>
+                                <span>2015-10-23 16:37:05</span>
+                            </p>
+                        </div>
+                        <div><button>物权人</button>
+                        </div>
+                    </div>
+                    <div class="shu331">
+                        <div><img src="../imgs/男头像.png" alt=""></div>
+                        <div>
+                            <p>北京兰兴达图书
+                                <br>
+                                <span>北京市大兴区黄村镇李村王桂路11号<br>
+                                    2015-10-23 16:37:05</span>
+                            </p>
+                        </div>
+                        <div><button class="color3">经销商</button>
+                        </div>
+                    </div>
+                    <div class="shu331">
+                        <div><img src="../imgs/男头像.png" alt=""></div>
+                        <div>
+                            <p>相关信信可后期添加<br>
+                                <span>北京市大兴区黄村镇李村王桂路11号<br>
+                                    2015-10-23 16:37:05</span>
+                            </p>
+                        </div>
+                        <div><button class="color2">出版社</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="shu4">
+            <p>该商品未绑定,拥有者可进行物权绑定</p>
+        </div>
+        <div id="shu5">
+            <div id="dd4">
+                <p>读者资料</p>
+                <p><input type="text" placeholder="姓名"></p>
+                <p><input type="text" placeholder="电话"></p>
+                <p><select name="" id="">
+                        <option value="">选择省</option>
+                        <option value="">北京</option>
+                        <option value="">上海</option>
+                        <option value="">广州</option>
+                        <option value="">深圳</option>
+                    </select></p>
+                <p><select name="" id="">
+                        <option value="">选择市</option>
+                        <option value="">北京</option>
+                        <option value="">上海</option>
+                        <option value="">广州</option>
+                        <option value="">深圳</option>
+                    </select></p>
+                <p><input type="text" placeholder="电话"></p>
+                <p><input type="text" placeholder="详细信息"></p>
+                <p><button>确认</button></p>
+            </div>
+    </main>
+    <div id="buttom">
+        <span class="c1 active" id="x1">
+            <span><img src="../imgs/首页-置灰 (1).png" alt="" id="ximg1"></span>
+            <span>首页</span>
+        </span>
+        <span class="c1" id="x2"><span><img src="../imgs/转换.png" alt="" id="ximg2"></span>
+            <span>转移物权码</span></span>
+        <span class="c1" id="x3"><span><img src="../imgs/修改.png" alt="" id="ximg3"></span>
+            <span>修改物权码</span></span>
+        <span class="c1" id="x4"><span><img src="../imgs/3.1 密码.png" alt="" id="ximg4"></span>
+            <span>找回物权码</span>
+        </span>
+    </div>
+</body>
+
+</html>
+<script>
+    let aac = ["../imgs/首页-置灰.png", "../imgs/转换.png", "../imgs/修改.png", "../imgs/3.1 密码.png"]
+    $(".c1").each(function (index) {
+        $(this).click(function () {
+            $(this).attr("class", "active c1");
+            if (index == 0) {
+                $(this).children(1).children(1).attr("src", "../imgs/首页-置灰 (1).png")
+                $("#ximg2").attr("src", aac[1]);
+                $("#ximg3").attr("src", aac[2]);
+                $("#ximg4").attr("src", aac[3]);
+                $("#main4").css("display","block")
+                $("#main4").siblings("main").css("display","none")
+            }
+            if (index == 1) {
+                $(this).children(1).children(1).attr("src", "../imgs/转换 (1).png")
+                $("#ximg1").attr("src", aac[0]);
+                $("#ximg3").attr("src", aac[2]);
+                $("#ximg4").attr("src", aac[3]);
+                $("#main3").css("display","block")
+                $("#main3").siblings("main").css("display","none")
+            }
+            if (index == 2) {
+                $(this).children(1).children(1).attr("src", "../imgs/修改 (1).png")
+                $("#ximg1").attr("src", aac[0]);
+                $("#ximg2").attr("src", aac[1]);
+                $("#ximg4").attr("src", aac[3]);
+                $("#main2").css("display","block")
+                $("#main2").siblings("main").css("display","none")
+            }
+            if (index == 3) {
+                $(this).children(1).children(1).attr("src", "../imgs/3.1 密码 (1).png")
+                $("#ximg1").attr("src", aac[0]);
+                $("#ximg2").attr("src", aac[1]);
+                $("#ximg3").attr("src", aac[2]);
+                $("#main1").css("display","block")
+                $("#main1").siblings("main").css("display","none")
+            }
+            $(this).siblings("span").attr("class", "c1")
+        })
+    })
+</script>

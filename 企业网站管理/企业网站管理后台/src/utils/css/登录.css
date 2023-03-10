@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#dd {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 200px auto;
+    position: relative;
+}
+
+p {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 120px;
+    box-sizing: border-box;
+    margin-top: 40px;
+    font-size: 20px;
+    position: relative;
+}
+
+input {
+    position: absolute;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(153, 50, 204, 0.39);
+    left: 200px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: darksalmon;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}

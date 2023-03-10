@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../utils/echarts.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            border: 1px solid #ffffff;
+            background-color: rgb(35,89,141);
+        }
+        /* .ge0{
+            width: 80%;
+            height: 80%;
+            border: 1px solid #000;
+        } */
+        .map .geo {
+    width: 100%;
+    height: 100%;
+}
+    </style>
+</head>
+
+<body>
+    <!-- 地图 -->
+    <div class="map">
+        <h3>
+            <span class="iconCube"></span>
+        </h3>
+        <!--地图-->
+        <div class="geo"></div>
+    </div>
+</body>
+
+</html>
+<script src="../utils/china.js"></script>
+<script src="../utils/myMap.js"></script>

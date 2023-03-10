@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../utils/css/注册.css">
+</head>
+
+<body>
+    <div id="ee">
+        <p>用户名： <input type="text" name="" id="user" oninput="us()" placeholder="请输入2~8位中文字符">
+            <span id="usere"></span>
+        </p>
+        <p>密码： <input type="password" name="" id="password" oninput="ps()" placeholder="请输入4~16位数字">
+            <span id="passworde"></span>
+        </p>
+        <p>确认密码： <input type="password" name="" id="passwordq" oninput="psq()">
+            <span id="passwordeq"></span>
+        </p>
+        <button onclick="zhu()">注册</button>
+    </div>
+
+</body>
+
+</html>
+<script src="../utils/js/md5.js"></script>
+<script src="../utils/js/注册.js"></script>

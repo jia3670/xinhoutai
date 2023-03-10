@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#ee {
+    width: 600px;
+    height: 300px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 200px auto;
+    font-size: 20px;
+    position: relative;
+}
+
+p {
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+input {
+    padding-left: 5px;
+    box-sizing: border-box;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(139, 0, 139, 0.205);
+    position: absolute;
+    left: 130px;
+}
+
+p>span {
+    width: 180px;
+    height: 100%;
+    position: absolute;
+    right: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: hotpink;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
